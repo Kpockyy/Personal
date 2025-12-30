@@ -1,4 +1,3 @@
-// Mobile Navigation Toggle
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('navMenu');
 const navLinks = document.querySelectorAll('.nav-link');
@@ -8,7 +7,6 @@ hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
 });
 
-// Close mobile menu when clicking a link
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
         navMenu.classList.remove('active');
@@ -16,7 +14,6 @@ navLinks.forEach(link => {
     });
 });
 
-// Active Navigation Link on Scroll
 const sections = document.querySelectorAll('section');
 
 window.addEventListener('scroll', () => {
@@ -25,7 +22,7 @@ window.addEventListener('scroll', () => {
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
-        if (window.pageYOffset >= sectionTop - 150) { // Adjusted offset
+        if (window.pageYOffset >= sectionTop - 150) { 
             current = section.getAttribute('id');
         }
     });
@@ -38,7 +35,6 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Smooth scroll enhancement
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -52,7 +48,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Add fade-in animation on scroll
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
